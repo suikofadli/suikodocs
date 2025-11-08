@@ -1,0 +1,69 @@
+# Dependencies
+node_modules/
+
+# Production build
+build/
+dist/
+
+# Cache and generated files
+.docusaurus/
+.cache/
+.cache-loader/
+
+# Environment variables
+.env*
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Coverage reports
+coverage/
+*.lcov
+
+# Temporary files
+tmp/
+temp/
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Package manager files
+.pnp
+.pnp.js
+.yarn/install-state.gz
+
+# TypeScript build files
+*.tsbuildinfo
+
+# Large static assets that don't need to be in context
+static/img/*.svg
+static/img/*.jpg
+static/img/*.png
+static/img/*.ico
+
+# Only include source files, not compiled/minified versions
+*.min.js
+*.min.css

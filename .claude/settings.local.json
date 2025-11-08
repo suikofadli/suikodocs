@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:inertiajs.com)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

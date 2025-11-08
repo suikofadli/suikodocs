@@ -1,0 +1,366 @@
+/**
+ * Inertia.js Indonesia Documentation Theme
+ * Inspired by Inertia.js official website design
+ */
+
+/* Import Playfair Display for headings, Instrument Sans for body, and JetBrains Mono for code */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+/* You can override the default Infima variables here. */
+:root {
+  /* Gradient theme colors - Light mode */
+  --ifm-color-primary: #9553e9;
+  --ifm-color-primary-dark: #7d44d4;
+  --ifm-color-primary-darker: #6d3bc4;
+  --ifm-color-primary-darkest: #5a2fb5;
+  --ifm-color-primary-light: #a967ec;
+  --ifm-color-primary-lighter: #b87bef;
+  --ifm-color-primary-lightest: #c8a2f5;
+
+  /* Gradient theme colors */
+  --gradient-start: #9553e9;
+  --gradient-end: #6d74ed;
+  --gradient-full: linear-gradient(to right, #fff, #6d74ed);
+
+  /* Custom colors for gradient theme */
+  --inertia-primary: #000;
+  --inertia-dark: #1e1e1e;
+  --inertia-gray: #6c757d;
+  --inertia-light-gray: #f8f9fa;
+  --inertia-code-bg: #f4f4f5;
+
+  /* Typography */
+  --ifm-font-family-base: 'Instrument Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --ifm-font-family-mono: 'JetBrains Mono', 'Fira Code', 'Monaco', 'Consolas', monospace;
+  --playfair-display: 'Playfair Display', Georgia, serif;
+  --ifm-font-size-base: 16px;
+  --ifm-line-height-base: 1.6;
+
+  /* Spacing */
+  --ifm-spacing-horizontal: 2rem;
+  --ifm-spacing-vertical: 1.5rem;
+
+  /* Code styling */
+  --ifm-code-font-size: 0.9em;
+  --ifm-code-border-radius: 6px;
+  --ifm-code-padding-vertical: 0.2em;
+  --ifm-code-padding-horizontal: 0.4em;
+  --docusaurus-highlighted-code-line-bg: rgba(229, 57, 53, 0.1);
+
+  /* Background color */
+  --ifm-background-color: #fcfcfc;
+  --ifm-background-surface-color: #ffffff;
+
+  /* Navigation */
+  --ifm-navbar-background-color: #ffffff;
+  --ifm-navbar-link-color: #424242;
+  --ifm-navbar-link-hover-color: var(--inertia-primary);
+  --ifm-navbar-shadow: 0 2px 4px rgba(0,0,0,0.08);
+
+  /* Sidebar */
+  --ifm-sidebar-background-color: #ffffff;
+  --ifm-sidebar-border-color: #e0e0e0;
+
+  /* Footer */
+  --ifm-footer-background-color: #1e1e1e;
+  --ifm-footer-color: #ffffff;
+  --ifm-footer-link-color: #ffffff;
+  --ifm-footer-link-hover-color: var(--inertia-primary);
+}
+
+/* Dark mode styling */
+[data-theme='dark'] {
+  --ifm-color-primary: #b87bef;
+  --ifm-color-primary-dark: #a967ec;
+  --ifm-color-primary-darker: #9553e9;
+  --ifm-color-primary-darkest: #7d44d4;
+  --ifm-color-primary-light: #c8a2f5;
+  --ifm-color-primary-lighter: #d6b5f7;
+  --ifm-color-primary-lightest: #e4ccf8;
+
+  /* Dark mode custom colors */
+  --inertia-primary: #b87bef;
+  --inertia-dark: #ffffff;
+  --inertia-gray: #b0b0b0;
+  --inertia-light-gray: #2d2d2d;
+  --inertia-code-bg: #2d2d2d;
+
+  /* Dark mode gradient colors */
+  --gradient-start: #b87bef;
+  --gradient-end: #8f9bf0;
+  --gradient-full: linear-gradient(to right, #b87bef, #8f9bf0);
+
+  /* Navigation dark mode */
+  --ifm-navbar-background-color: #1e1e1e;
+  --ifm-navbar-link-color: #ffffff;
+  --ifm-navbar-link-hover-color: var(--inertia-primary);
+
+  /* Sidebar dark mode */
+  --ifm-sidebar-background-color: #1e1e1e;
+  --ifm-sidebar-border-color: #404040;
+
+  --docusaurus-highlighted-code-line-bg: rgba(239, 83, 80, 0.2);
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--inertia-light-gray);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--inertia-gray);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--inertia-primary);
+}
+
+/* Enhanced code blocks */
+code {
+  background-color: var(--inertia-code-bg) !important;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: var(--ifm-code-border-radius);
+  padding: var(--ifm-code-padding-vertical) var(--ifm-code-padding-horizontal);
+  font-family: var(--ifm-font-family-mono);
+  font-size: var(--ifm-code-font-size);
+  line-height: 2.25;
+}
+
+pre code {
+  display: block;
+  padding: 1rem;
+  overflow-x: auto;
+  border: none;
+}
+
+/* Enhanced table styling */
+table {
+  border-collapse: collapse;
+  margin: var(--ifm-spacing-vertical) 0;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid var(--ifm-color-emphasis-300);
+  padding: 0.75rem;
+  text-align: left;
+}
+
+th {
+  background-color: var(--inertia-light-gray);
+  font-weight: 600;
+}
+
+/* Enhanced heading styling */
+h1 {
+  color: var(--ifm-color-content);
+  font-family: var(--playfair-display);
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 0.5em;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  border-bottom: 4px;
+  border-bottom-style: double;
+  padding-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  border-bottom: 1px dashed var(--ifm-color-emphasis-300);
+  padding-bottom: 0.25rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+h5 {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+h6 {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+
+/* Custom button styling */
+.button {
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(149, 83, 233, 0.3);
+}
+
+/* Gradient utility classes */
+.gradient-text {
+  background: var(--gradient-full);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-clip: text;
+}
+
+.gradient-bg {
+  background: var(--gradient-full);
+}
+
+.gradient-border {
+  position: relative;
+  background: var(--ifm-background-color);
+  border-radius: 8px;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  background: var(--gradient-full);
+  border-radius: 8px;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  z-index: -1;
+}
+
+/* Card styling for documentation */
+.card {
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  background-color: var(--ifm-background-color);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  position: relative;
+}
+
+.card:hover {
+  box-shadow: 0 8px 24px rgba(149, 83, 233, 0.15);
+  transform: translateY(-2px);
+}
+
+.card-gradient {
+  background: var(--gradient-full);
+  color: white;
+}
+
+.card-gradient h1 {
+  color: white;
+  font-family: var(--playfair-display);
+}
+
+.card-gradient .card__text {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Alert/notice styling */
+.alert {
+  border-left: 4px solid var(--inertia-primary);
+  background-color: var(--inertia-light-gray);
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 0 4px 4px 0;
+}
+
+.alert.info {
+  border-left-color: var(--ifm-color-info);
+}
+
+.alert.warning {
+  border-left-color: var(--ifm-color-warning);
+}
+
+.alert.success {
+  border-left-color: var(--ifm-color-success);
+}
+
+.alert.danger {
+  border-left-color: var(--ifm-color-danger);
+}
+
+/* Enhanced gradient animations */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animated-gradient {
+  background: linear-gradient(270deg, #9553e9, #6d74ed, #9553e9);
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+
+
+/* Pagination gradient */
+.pagination__item--active .pagination__link {
+  background: var(--gradient-full);
+  border-color: var(--gradient-start);
+}
+
+/* Alert gradient variants */
+.alert--gradient {
+  background: linear-gradient(135deg, rgba(149, 83, 233, 0.1), rgba(109, 116, 237, 0.1));
+  border-left: 4px solid var(--gradient-start);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  :root {
+    --ifm-font-size-base: 15px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+}
+
+.navbar__title {
+  position: absolute;
+  top: 36px;
+  font-size: 10px;
+}
+
+.navbar__logo img {
+  height: 24px;
+}
+
+.theme-layout-footer {
+  padding: 16px;
+  font-size: 14px;
+}

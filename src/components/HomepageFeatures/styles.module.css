@@ -1,0 +1,17 @@
+.features {
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+  width: 100%;
+}
+
+.featureSvg {
+  height: 200px;
+  width: 200px;
+  filter: drop-shadow(0 4px 8px rgba(149, 83, 233, 0.2));
+  transition: transform 0.3s ease;
+}
+
+.featureSvg:hover {
+  transform: scale(1.05);
+}
