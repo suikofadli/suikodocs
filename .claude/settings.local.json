@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:inertiajs.com)"
+      "WebFetch(domain:inertiajs.com)",
+      "Bash(git add:*)"
     ],
     "deny": [],
     "ask": []

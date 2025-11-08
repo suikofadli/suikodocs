@@ -74,9 +74,6 @@ defineProps({ users: Array })
           <Link to="/docs/intro" className={styles.primaryButton}>
             Mulai Sekarang
           </Link>
-          <Link to="/docs/installation" className={styles.secondaryButton}>
-            Dokumentasi
-          </Link>
         </div>
 
         {/* Translation Info Card */}
