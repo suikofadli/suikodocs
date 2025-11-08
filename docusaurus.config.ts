@@ -54,6 +54,7 @@ const config: Config = {
     // Replace with your project's social card
     image: "img/docusaurus-social-card.jpg",
     colorMode: {
+      defaultMode: 'light',
       respectPrefersColorScheme: true,
     },
     docs: {
@@ -87,16 +88,15 @@ const config: Config = {
         },
       ],
     },
-    footer: {
-      style: "dark",
-      links: [],
-      copyright: `Copyright © ${new Date().getFullYear()} Inertia.js Indonesia. Built with Docusaurus.`,
-    },
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
       additionalLanguages: ["php"],
     },
+    footer: {
+      style: 'light',
+      copyright: `Indonesian Inertia.js Documentation • ${new Date().getFullYear()}`
+    }
   } satisfies Preset.ThemeConfig,
 };
 

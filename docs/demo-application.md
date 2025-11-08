@@ -2,19 +2,19 @@
 sidebar_position: 2
 ---
 
-# Aplikasi Demo
+# *Demo Application*
 
-Kami telah menyiapkan aplikasi demo untuk Inertia.js yang disebut [Ping CRM](https://demo.inertiajs.com). Aplikasi ini dibuat menggunakan Laravel dan Vue. Anda dapat menemukan kode sumbernya di [GitHub](https://github.com/inertiajs/pingcrm).
+Kami telah menyiapkan *demo app* untuk Inertia.js bernama [Ping CRM](https://demo.inertiajs.com). Aplikasi ini dibangun menggunakan Laravel dan Vue. Anda dapat melihat kode sumbernya di [GitHub](https://github.com/inertiajs/pingcrm).
 
-Demo Ping CRM dihosting di Heroku dan database diatur ulang setiap jam. Mohon bersikap hormat saat mengedit data.
+*Demo* Ping CRM di-*host* di Heroku, dan *database* akan di-*reset* setiap jam. Mohon bersikap bijak saat mengubah data.
 
 [![Ping CRM](/img/pingcrm.png)](https://demo.inertiajs.com)
 
-Selain versi Vue dari Ping CRM, kami juga memelihara versi Svelte dari aplikasi, yang dapat Anda temukan [di GitHub](https://github.com/inertiajs/pingcrm-svelte).
+Selain versi Vue dari Ping CRM, kami juga memelihara versi Svelte dari aplikasi ini, yang dapat Anda temukan [di GitHub](https://github.com/inertiajs/pingcrm-svelte).
 
-## Pihak ketiga
+## *Third Party*
 
-Selain aplikasi demo resmi kami, Ping CRM juga telah diterjemahkan ke berbagai bahasa dan framework yang berbeda.
+Selain *demo app* resmi kami, Ping CRM juga telah diterjemahkan dan diadaptasi ke berbagai bahasa pemrograman serta *framework* yang berbeda.
 
 - [Clojure/React](https://github.com/prestancedesign/pingcrm-clojure) oleh Michaël Salihi
 - [Echo/Vue](https://github.com/kohkimakimoto/pingcrm-echo) oleh Kohki Makimoto

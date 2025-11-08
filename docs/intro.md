@@ -2,18 +2,18 @@
 sidebar_position: 1
 ---
 
-# Pengenalan
+# Aplikasi JavaScript dengan cara *monolith*
 
-Inertia adalah pendekatan baru untuk membangun aplikasi web klasik yang digerakkan oleh server. Kami menyebutnya monolitik modern.
+Inertia adalah pendekatan baru untuk membangun aplikasi web klasik yang digerakkan oleh *server*. Kami menyebutnya **modern monolith**.
 
-Inertia memungkinkan Anda membuat aplikasi satu halaman yang sepenuhnya dirender di sisi klien, tanpa kompleksitas yang ada pada SPA modern. Ini dilakukan dengan memanfaatkan pola sisi server yang sudah ada dan Anda sukai.
+Inertia memungkinkan Anda membuat aplikasi *single-page app* yang sepenuhnya di-*render* di *client-side*, tanpa kompleksitas yang biasanya ada pada *SPA* modern. Ini dicapai dengan memanfaatkan pola *server-side* yang sudah ada dan telah Anda kenal.
 
-Inertia tidak memiliki routing di sisi klien, dan tidak memerlukan API. Cukup buat controller dan tampilan halaman seperti yang biasa Anda lakukan! Inertia bekerja dengan sangat baik dengan framework backend apa pun, tetapi disesuaikan secara khusus untuk [Laravel](https://laravel.com).
+Inertia tidak memiliki sistem *routing* di *client-side* dan tidak memerlukan *API*. Cukup buat *controllers* dan *views* halaman seperti biasanya! Inertia bekerja dengan sangat baik bersama berbagai *framework* *backend*, tetapi secara khusus dioptimalkan untuk [Laravel](https://laravel.com).
 
-## Bukan sebuah framework
+## Bukan sebuah *framework*
 
-Inertia bukan sebuah framework, dan bukan pengganti framework sisi server atau sisi klien yang sudah ada. Sebaliknya, ini dirancang untuk bekerja dengan mereka. Anggap Inertia sebagai perekat yang menghubungkan keduanya. Inertia melakukan ini melalui adaptor. Saat ini kami memiliki tiga adaptor sisi klien resmi (React, Vue, dan Svelte) dan tiga adaptor sisi server (Laravel, Rails, dan Phoenix).
+Inertia bukanlah *framework*, dan bukan pengganti *framework* *server-side* maupun *client-side* yang sudah Anda gunakan. Sebaliknya, Inertia dirancang untuk bekerja bersamaan dengan mereka. Anggaplah Inertia sebagai perekat yang menghubungkan keduanya. Inertia melakukannya melalui *adapters*. Saat ini tersedia tiga *adapters* *client-side* resmi (React, Vue, dan Svelte) serta tiga *adapters* *server-side* (Laravel, Rails, dan Phoenix).
 
 ## Langkah selanjutnya
 
-Ingin mempelajari lebih lanjut sebelum terjun? Lihat halaman [untuk siapa ini](/who-is-it-for) dan [bagaimana cara kerjanya](/how-it-works). Atau, jika Anda siap untuk memulai, langsung saja ke [petunjuk instalasi](/server-side-setup).
+Ingin mempelajari lebih lanjut sebelum mulai? Lihat halaman [untuk siapa Inertia](/who-is-it-for) dan [cara kerjanya](/how-it-works). Atau, jika Anda siap, langsung saja menuju [panduan instalasi](/server-side-setup).

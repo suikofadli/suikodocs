@@ -63,12 +63,7 @@
   --ifm-sidebar-background-color: #ffffff;
   --ifm-sidebar-border-color: #e0e0e0;
 
-  /* Footer */
-  --ifm-footer-background-color: #1e1e1e;
-  --ifm-footer-color: #ffffff;
-  --ifm-footer-link-color: #ffffff;
-  --ifm-footer-link-hover-color: var(--inertia-primary);
-}
+  }
 
 /* Dark mode styling */
 [data-theme='dark'] {
@@ -101,7 +96,34 @@
   --ifm-sidebar-background-color: #1e1e1e;
   --ifm-sidebar-border-color: #404040;
 
+  /* Background colors dark mode */
+  --ifm-background-color: #1a1a1a;
+  --ifm-background-surface-color: #2d2d2d;
+
+  /* Content colors dark mode */
+  --ifm-color-content: #e2e8f0;
+  --ifm-color-content-secondary: #a0aec0;
+
   --docusaurus-highlighted-code-line-bg: rgba(239, 83, 80, 0.2);
+
+  }
+
+/* Additional dark mode fixes for documentation */
+[data-theme='dark'] .markdown {
+  background-color: var(--ifm-background-color);
+  color: var(--ifm-color-content);
+}
+
+[data-theme='dark'] .theme-doc-markdown {
+  background-color: var(--ifm-background-color);
+}
+
+[data-theme='dark'] .theme-doc-sidebar-container {
+  background-color: var(--ifm-sidebar-background-color);
+}
+
+[data-theme='dark'] .navbar {
+  background-color: var(--ifm-navbar-background-color);
 }
 
 /* Custom scrollbar for webkit browsers */
@@ -168,28 +190,41 @@ h1 {
   margin-bottom: 0.5em;
 }
 
-h1 {
-  font-size: 2.5rem;
+/* H1 with border bottom only in documentation pages */
+article h1, .markdown h1, .theme-doc-markdown h1 {
+  font-size: 2.2rem;
   font-weight: 900;
   border-bottom: 4px;
   border-bottom-style: double;
   padding-bottom: 0.5rem;
 }
 
+/* Homepage h1 without border bottom */
+.heroHeadline {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  color: #1a202c;
+  letter-spacing: -0.02em;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
 h2 {
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: 700;
   border-bottom: 1px dashed var(--ifm-color-emphasis-300);
   padding-bottom: 0.25rem;
 }
 
 h3 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 700;
 }
 
 h4 {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: 700;
 }
 
@@ -342,11 +377,19 @@ h6 {
   }
 
   h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   h2 {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  h4 {
+    font-size: 1.1rem;
   }
 }
 
@@ -360,7 +403,40 @@ h6 {
   height: 24px;
 }
 
-.theme-layout-footer {
-  padding: 16px;
-  font-size: 14px;
+/* Dark mode logo styling */
+[data-theme='dark'] .navbar__logo img {
+  filter: brightness(0) invert(1);
 }
+
+/* Compact footer styling */
+.footer {
+  padding: 0.5rem 0;
+  border-top: 1px solid var(--ifm-color-emphasis-300);
+  background-color: var(--ifm-background-surface-color);
+}
+
+.footer__copyright {
+  font-size: 0.875rem;
+  color: var(--ifm-color-content-secondary);
+  margin: 0;
+  padding: 0;
+}
+
+.footer__links {
+  margin-bottom: 0.25rem;
+}
+
+.footer__link-item {
+  font-size: 0.875rem;
+  padding: 0.25rem 0.5rem;
+}
+
+/* Remove extra spacing in footer */
+.footer__col {
+  padding: 0;
+}
+
+.footer__row {
+  margin: 0;
+}
+
