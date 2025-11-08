@@ -3,134 +3,422 @@
  * and scoped locally.
  */
 
-/* Letter-style container with light theme */
-.letterContainer {
-  min-height: 80vh;
+/* Hero Section Container */
+.heroContainer {
+  min-height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
-  background: #fafafa;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  padding: 3rem 2rem 2rem;
+  background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif;
+  transition: background 0.3s ease;
 }
 
-.letterContent {
-  max-width: 800px;
+/* Dark mode hero container */
+[data-theme='dark'] .heroContainer {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+}
+
+.heroContent {
+  max-width: 900px;
   width: 100%;
-  background: white;
-  padding: 4rem;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  border: 1px solid #e1e5e9;
   text-align: center;
 }
 
-/* Logo Section */
-.logoSection {
-  margin-bottom: 3rem;
-  display: flex;
-  justify-content: center;
+
+/* Hero Text */
+.heroText {
+  margin-bottom: 2rem;
 }
 
-.letterLogo {
-  height: 60px;
+.heroHeadline {
+  /* Base styles for hero headline */
+}
+
+.heroHeadline strong {
+  color: #9553e9;
+  font-weight: 800;
+}
+
+/* Custom headline with larger font size */
+.customHeadline {
+  font-size: 3rem !important;
+  line-height: 1.15 !important;
+  font-weight: 700 !important;
+}
+
+.heroSubheadline {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: #4a5568;
+  margin-bottom: 0;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.heroSubheadline strong {
   color: #2d3748;
-  opacity: 0.8;
-  transition: all 0.2s ease;
+  font-weight: 600;
 }
 
-.letterLogo:hover {
-  opacity: 1;
-  transform: scale(1.02);
+/* Dark mode text colors */
+[data-theme='dark'] .heroHeadline {
+  color: #f8f8f2 !important;
 }
 
-/* Introduction Section */
-.introduction {
-  margin-bottom: 3rem;
+[data-theme='dark'] .heroHeadline strong {
+  color: #b87bef !important; /* Lighter purple for dark mode */
+}
+
+[data-theme='dark'] .heroSubheadline {
+  color: #e2e8f0 !important;
+}
+
+[data-theme='dark'] .heroSubheadline strong {
+  color: #cbd5e0 !important;
+}
+
+/* Code Example */
+.codeExample {
+  margin-bottom: 2rem;
   text-align: left;
 }
 
-.introText {
-  font-size: 1.125rem;
-  line-height: 1.7;
-  color: #4a5568;
-  margin-bottom: 1.5rem;
-  font-weight: 400;
+/* Tabs styling for code examples */
+.codeExample .tabs {
+  margin: 0;
 }
 
-.introText:last-child {
-  margin-bottom: 0;
+.codeExample .tabs__item {
+  background: transparent;
+  border: none;
+  color: #a0aec0;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-bottom: 2px solid transparent;
+  transition: all 0.15s ease;
 }
 
-/* CTA Section */
-.ctaSection {
+.codeExample .tabs__item:hover {
+  color: #e2e8f0;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.codeExample .tabs__item--active {
+  color: #f8f8f2;
+  border-bottom-color: #9553e9;
+  background: rgba(149, 83, 233, 0.1);
+}
+
+/* Dark mode tabs */
+[data-theme='dark'] .codeExample .tabs__item {
+  color: #718096;
+}
+
+[data-theme='dark'] .codeExample .tabs__item:hover {
+  color: #e2e8f0;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme='dark'] .codeExample .tabs__item--active {
+  color: #f8f8f2;
+  border-bottom-color: #b87bef;
+  background: rgba(184, 123, 239, 0.1);
+}
+
+/* Hero Actions */
+.heroActions {
   display: flex;
+  gap: 1rem;
   justify-content: center;
-  margin-top: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-.ctaButton {
+.primaryButton {
   display: inline-flex;
   align-items: center;
-  padding: 0.75rem 2rem;
+  justify-content: center;
+  padding: 0.75rem 1.75rem;
   background: #9553e9;
   color: white;
   text-decoration: none;
   border-radius: 6px;
-  font-weight: 600;
-  font-size: 1rem;
-  transition: all 0.2s ease;
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: all 0.15s ease;
   border: none;
   cursor: pointer;
+  min-height: 40px;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
 }
 
-.ctaButton:hover {
+.primaryButton:hover {
   background: #7c3aed;
   transform: translateY(-1px);
   text-decoration: none;
   color: white;
+  box-shadow: 0 4px 12px rgba(149, 83, 233, 0.25);
 }
 
-.ctaButton:active {
+.primaryButton:active {
   transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(149, 83, 233, 0.2);
+}
+
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.75rem;
+  background: transparent;
+  color: #9553e9;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: all 0.15s ease;
+  border: 1px solid #e2e8f0;
+  cursor: pointer;
+  min-height: 40px;
+  white-space: nowrap;
+  position: relative;
+}
+
+.secondaryButton:hover {
+  background: #f7fafc;
+  color: #7c3aed;
+  border-color: #cbd5e0;
+  transform: translateY(-1px);
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.secondaryButton:active {
+  transform: translateY(0);
+  background: #edf2f7;
+}
+
+/* Dark mode buttons */
+[data-theme='dark'] .primaryButton {
+  background: #b87bef;
+  box-shadow: 0 2px 4px rgba(184, 123, 239, 0.2);
+}
+
+[data-theme='dark'] .primaryButton:hover {
+  background: #d6b5f7;
+  box-shadow: 0 4px 12px rgba(184, 123, 239, 0.3);
+}
+
+[data-theme='dark'] .secondaryButton {
+  border-color: #4a5568;
+  color: #e2e8f0;
+}
+
+[data-theme='dark'] .secondaryButton:hover {
+  background: #2d3748;
+  color: #b87bef;
+  border-color: #718096;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme='dark'] .secondaryButton:active {
+  background: #1a202c;
+}
+
+/* Translation Info Card */
+.infoCard {
+  margin: 3.5rem 0 4rem 0;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(149, 83, 233, 0.1);
+  border-radius: 12px;
+  padding: 2rem 2.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+/* Dark mode info card */
+[data-theme='dark'] .infoCard {
+  background: rgba(45, 45, 45, 0.9);
+  border-color: rgba(184, 123, 239, 0.2);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.infoCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 12px rgba(149, 83, 233, 0.1);
+}
+
+[data-theme='dark'] .infoCard:hover {
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+.infoCardIcon {
+  font-size: 1.75rem;
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+  line-height: 1;
+}
+
+.infoCardContent {
+  flex: 1;
+}
+
+.infoCardTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin: 0 0 0.75rem 0;
+  line-height: 1.3;
+}
+
+[data-theme='dark'] .infoCardTitle {
+  color: #f8f8f2;
+}
+
+.infoCardDescription {
+  font-size: 1rem;
+  color: #4a5568;
+  line-height: 1.7;
+  margin: 0;
+}
+
+[data-theme='dark'] .infoCardDescription {
+  color: #e2e8f0;
+}
+
+.infoCardLink {
+  color: #9553e9;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.15s ease;
+}
+
+.infoCardLink:hover {
+  color: #7c3aed;
+  text-decoration: underline;
+}
+
+[data-theme='dark'] .infoCardLink {
+  color: #b87bef;
+}
+
+[data-theme='dark'] .infoCardLink:hover {
+  color: #d6b5f7;
 }
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {
-  .letterContainer {
-    padding: 1rem;
-    min-height: auto;
+  .heroContainer {
+    padding: 2rem 1rem 1rem;
   }
 
-  .letterContent {
-    padding: 2rem 1.5rem;
+  .heroHeadline {
+    font-size: 2.5rem;
+    line-height: 1.2;
   }
 
-  .letterLogo {
-    height: 50px;
+  .customHeadline {
+    font-size: 2.5rem !important;
+    line-height: 1.2 !important;
   }
 
-  .introText {
-    font-size: 1rem;
-    line-height: 1.6;
+  .heroSubheadline {
+    font-size: 1.125rem;
   }
 
-  .ctaButton {
+  
+  
+  .heroActions {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .primaryButton,
+  .secondaryButton {
     width: 100%;
-    justify-content: center;
+    padding: 0.875rem 1.5rem;
+    min-height: 44px;
+    font-size: 1rem;
+  }
+
+  .infoCard {
+    margin: 2.5rem 0 3rem 0;
+    padding: 1.75rem;
+    flex-direction: column;
+    text-align: left;
+    gap: 1rem;
+  }
+
+  .infoCardIcon {
+    align-self: flex-start;
+    font-size: 1.75rem;
+  }
+
+  .infoCardTitle {
+    font-size: 1rem;
+  }
+
+  .infoCardDescription {
+    font-size: 0.875rem;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .letterContent {
-    padding: 1.5rem 1rem;
+  .heroHeadline {
+    font-size: 2rem;
   }
 
-  .letterLogo {
-    height: 40px;
+  .customHeadline {
+    font-size: 2rem !important;
+    line-height: 1.25 !important;
   }
 
-  .introText {
-    font-size: 0.95rem;
+  .heroSubheadline {
+    font-size: 1rem;
+  }
+
+  
+  
+  .heroActions {
+    flex-direction: column;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.875rem;
+    min-height: 40px;
+  }
+
+  .infoCard {
+    margin: 2rem 0 2.5rem 0;
+    padding: 1.5rem;
+    flex-direction: column;
+    text-align: left;
+    gap: 0.875rem;
+  }
+
+  .infoCardIcon {
+    font-size: 1.5rem;
+    align-self: flex-start;
+  }
+
+  .infoCardTitle {
+    font-size: 0.9375rem;
+  }
+
+  .infoCardDescription {
+    font-size: 0.875rem;
   }
 }
