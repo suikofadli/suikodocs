@@ -35,7 +35,7 @@ function HeroSection() {
 {
     public function index()
     {
-        return Inertia::render('Users/Index', [
+        return Livewire::render('Users/Index', [
             'users' => User::all(),
         ]);
     }
@@ -47,7 +47,7 @@ function HeroSection() {
               <ShikiCodeBlock
                 code={`<script setup>
 import Layout from './Layout'
-import { Link, Head } from '@inertiajs/vue3'
+import { Link, Head } from '@livewire/vue3'
 
 defineProps({ users: Array })
 </script>
@@ -84,7 +84,7 @@ defineProps({ users: Array })
           <div className={styles.infoCardContent}>
             <h3 className={styles.infoCardTitle}>Dokumentasi Bahasa Indonesia</h3>
             <p className={styles.infoCardDescription}>
-              Website ini merupakan dokumentasi terjemahan dari <a href="https://inertiajs.com" target="_blank" rel="noopener noreferrer" className={styles.infoCardLink}>inertiajs.com</a> yang disertai dengan penambahan penjelasan dan recipes praktis yang sering digunakan dalam proyek Inertia.
+              Website ini merupakan dokumentasi terjemahan dari <a href="https://livewire.laravel.com" target="_blank" rel="noopener noreferrer" className={styles.infoCardLink}>livewire.laravel.com</a> yang disertai dengan penambahan penjelasan dan recipes praktis yang sering digunakan dalam proyek Livewire.
             </p>
           </div>
         </div>
@@ -98,7 +98,7 @@ export default function Home() {
   return (
     <Layout
       title={`${siteConfig.title} - ${siteConfig.tagline}`}
-      description="Dokumentasi Inertia.js bahasa Indonesia - Bangun aplikasi single-page, tanpa membangun API"
+      description="Dokumentasi Livewire bahasa Indonesia - Bangun aplikasi dinamis, tanpa API yang rumit"
     >
       <HeroSection />
     </Layout>

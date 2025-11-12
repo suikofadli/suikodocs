@@ -3,8 +3,8 @@ import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
-  title: "Inertia.js Indonesia",
-  tagline: "Dokumentasi Inertia.js Bahasa Indonesia",
+  title: "Livewire Indonesia",
+  tagline: "Dokumentasi Livewire Bahasa Indonesia",
   favicon: "img/favicon.ico",
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -13,15 +13,15 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: "https://inertiajs-id.vercel.app",
+  url: "https://livewire-id.vercel.app",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "inertiajs-id", // Usually your GitHub org/user name.
-  projectName: "inertiajs-id", // Usually your repo name.
+  organizationName: "livewire-id", // Usually your GitHub org/user name.
+  projectName: "livewire-id", // Usually your repo name.
 
   onBrokenLinks: "warn",
 
@@ -41,7 +41,7 @@ const config: Config = {
           sidebarPath: "./sidebars.ts",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/nandayonah/inertiajs-id/tree/main/",
+          editUrl: "https://github.com/nandayonah/livewire-id/tree/main/",
         },
         theme: {
           customCss: "./src/css/custom.css",
@@ -66,23 +66,23 @@ const config: Config = {
     navbar: {
       title: "Bahasa Indonesia",
       logo: {
-        alt: "Inertia.js Logo",
-        src: "img/logo.png",
+        alt: "Livewire Logo",
+        src: "img/logo.webp",
       },
       items: [
         {
           type: "docSidebar",
-          sidebarId: "inertiaSidebar",
+          sidebarId: "livewireSidebar",
           position: "left",
           label: "Docs",
         },
         {
-          href: "https://github.com/inertiajs/inertia",
-          label: "Inertia.js",
+          href: "https://livewire.laravel.com",
+          label: "Livewire",
           position: "right",
         },
         {
-          href: "https://github.com/nandayonah/inertiajs-id",
+          href: "https://github.com/nandayonah/livewire-id",
           label: "GitHub",
           position: "right",
         },
@@ -95,7 +95,7 @@ const config: Config = {
     },
     footer: {
       style: 'light',
-      copyright: `Indonesian Inertia.js Documentation • ${new Date().getFullYear()}`
+      copyright: `Indonesian Livewire Documentation • ${new Date().getFullYear()}`
     }
   } satisfies Preset.ThemeConfig,
 };

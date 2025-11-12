@@ -1,6 +1,6 @@
 /**
- * Inertia.js Indonesia Documentation Theme
- * Inspired by Inertia.js official website design
+ * Livewire Indonesia Documentation Theme
+ * Inspired by Livewire official website design
  */
 
 /* Import Playfair Display for headings, Instrument Sans for body, and JetBrains Mono for code */
@@ -25,11 +25,11 @@
   --gradient-full: linear-gradient(to right, #fff, #6d74ed);
 
   /* Custom colors for gradient theme */
-  --inertia-primary: #000;
-  --inertia-dark: #1e1e1e;
-  --inertia-gray: #6c757d;
-  --inertia-light-gray: #f8f9fa;
-  --inertia-code-bg: #f4f4f5;
+  --livewire-primary: #000;
+  --livewire-dark: #1e1e1e;
+  --livewire-gray: #6c757d;
+  --livewire-light-gray: #f8f9fa;
+  --livewire-code-bg: #f4f4f5;
 
   /* Typography */
   --ifm-font-family-base: 'Instrument Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -56,7 +56,7 @@
   /* Navigation */
   --ifm-navbar-background-color: #ffffff;
   --ifm-navbar-link-color: #424242;
-  --ifm-navbar-link-hover-color: var(--inertia-primary);
+  --ifm-navbar-link-hover-color: var(--livewire-primary);
   --ifm-navbar-shadow: 0 2px 4px rgba(0,0,0,0.08);
 
   /* Sidebar */
@@ -76,11 +76,11 @@
   --ifm-color-primary-lightest: #e4ccf8;
 
   /* Dark mode custom colors */
-  --inertia-primary: #b87bef;
-  --inertia-dark: #ffffff;
-  --inertia-gray: #b0b0b0;
-  --inertia-light-gray: #2d2d2d;
-  --inertia-code-bg: #2d2d2d;
+  --livewire-primary: #b87bef;
+  --livewire-dark: #ffffff;
+  --livewire-gray: #b0b0b0;
+  --livewire-light-gray: #2d2d2d;
+  --livewire-code-bg: #2d2d2d;
 
   /* Dark mode gradient colors */
   --gradient-start: #b87bef;
@@ -90,7 +90,7 @@
   /* Navigation dark mode */
   --ifm-navbar-background-color: #1e1e1e;
   --ifm-navbar-link-color: #ffffff;
-  --ifm-navbar-link-hover-color: var(--inertia-primary);
+  --ifm-navbar-link-hover-color: var(--livewire-primary);
 
   /* Sidebar dark mode */
   --ifm-sidebar-background-color: #1e1e1e;
@@ -133,21 +133,21 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--inertia-light-gray);
+  background: var(--livewire-light-gray);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--inertia-gray);
+  background: var(--livewire-gray);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--inertia-primary);
+  background: var(--livewire-primary);
 }
 
 /* Enhanced code blocks */
 code {
-  background-color: var(--inertia-code-bg) !important;
+  background-color: var(--livewire-code-bg) !important;
   border: 1px solid var(--ifm-color-emphasis-300);
   border-radius: var(--ifm-code-border-radius);
   padding: var(--ifm-code-padding-vertical) var(--ifm-code-padding-horizontal);
@@ -177,7 +177,7 @@ th, td {
 }
 
 th {
-  background-color: var(--inertia-light-gray);
+  background-color: var(--livewire-light-gray);
   font-weight: 600;
 }
 
@@ -320,8 +320,8 @@ h6 {
 
 /* Alert/notice styling */
 .alert {
-  border-left: 4px solid var(--inertia-primary);
-  background-color: var(--inertia-light-gray);
+  border-left: 4px solid var(--livewire-primary);
+  background-color: var(--livewire-light-gray);
   padding: 1rem;
   margin: 1rem 0;
   border-radius: 0 4px 4px 0;
