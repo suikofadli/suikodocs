@@ -1,5 +1,3 @@
----
-
 # Morphing
 
 Ketika komponen Livewire memperbarui DOM browser, hal tersebut dilakukan dengan cara cerdas yang kami sebut "morphing". Istilah _morph_ berbeda dengan kata seperti _replace_.
@@ -73,7 +71,7 @@ Sekarang, bayangkan Anda mengetik "third" ke dalam field input dan menekan tombo
 
 Ketika Livewire memproses pembaruan komponen, ia _morphs_ DOM asli menjadi HTML yang baru dirender. Visualisasi berikut seharusnya secara intuitif memberikan pemahaman tentang cara kerjanya:
 
-<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/844600772?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="morph_basic"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<div style={{padding:"56.25% 0 0 0",position:"relative"}}><iframe src="https://player.vimeo.com/video/844600772?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style={{position:"absolute",top:0,left:0,width:"100%",height:"100%"}} title="morph_basic"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 
 Seperti yang Anda lihat, Livewire berjalan melalui kedua pohon HTML secara bersamaan. Saat ia menemukan setiap elemen di kedua pohon, ia membandingkannya untuk perubahan, penambahan, dan penghapusan. Jika ia mendeteksi adanya perubahan, ia akan melakukan perubahan yang tepat.
 
@@ -103,7 +101,7 @@ Pertimbangkan template Blade Livewire berikut untuk komponen `CreatePost` fiktif
 
 Jika pengguna mencoba mengirimkan formulir, tetapi mengalami error validasi, masalah berikut terjadi:
 
-<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/844600840?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="morph_problem"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<div style={{padding:"56.25% 0 0 0",position:"relative"}}><iframe src="https://player.vimeo.com/video/844600840?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style={{position:"absolute",top:0,left:0,width:"100%",height:"100%"}} title="morph_problem"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 
 Seperti yang Anda lihat, ketika Livewire menemukan `<div>` baru untuk pesan error, ia tidak tahu apakah akan mengubah `<div>` yang sudah ada di tempat, atau menyisipkan `<div>` baru di tengah.
 
@@ -132,7 +130,7 @@ Ini mencegah skenario di atas terjadi dalam banyak kasus.
 
 Berikut adalah visualisasi algoritma "look-ahead" dalam aksi:
 
-<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/844600800?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="morph_lookahead"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<div style={{padding:"56.25% 0 0 0",position:"relative"}}><iframe src="https://player.vimeo.com/video/844600800?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style={{position:"absolute",top:0,left:0,width:"100%",height:"100%"}} title="morph_lookahead"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 
 ### Menyuntikkan penanda morph
 

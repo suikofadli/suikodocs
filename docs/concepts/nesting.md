@@ -1,5 +1,3 @@
----
-
 # Nesting
 
 Livewire memungkinkan Anda untuk *menyarangkan* (*nested*) komponen Livewire tambahan di dalam *parent component*. Fitur ini sangat kuat, karena memungkinkan Anda untuk menggunakan kembali dan mengkapsulasi perilaku dalam komponen Livewire yang dibagikan di seluruh aplikasi Anda.
