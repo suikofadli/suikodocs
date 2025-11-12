@@ -1,4 +1,4 @@
-Copy content from md file links provided then apply translation Bahasa Indonesia to docs md file I already have.
+I want to make a best translation of InertiaJS to Bahasa Indonesia.
 
 Original file $1, destination file $2.
 
