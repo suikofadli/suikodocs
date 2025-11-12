@@ -97,19 +97,6 @@ const sidebars: SidebarsConfig = {
         "packages/volt",
       ],
     },
-    {
-      type: "category",
-      label: "Additional Resources",
-      items: [
-        "additional/best-practices",
-        "additional/bundling",
-        "additional/component-hooks",
-        "additional/dirty",
-        "additional/how-livewire-works",
-        "additional/the-livewire-protocol",
-        "additional/blade-components",
-      ],
-    },
   ],
 };
 

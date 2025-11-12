@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# Peningkatan Versi
+# Upgrade Guide
 
 ## Alat peningkatan versi otomatis
 
@@ -157,7 +157,6 @@ Anda dapat memindahkan file layout Anda ke lokasi baru atau menerapkan konfigura
 
 Untuk informasi lebih lanjut, periksa dokumentasi tentang [membuat dan menggunakan layout komponen halaman](/docs/components#layout-files).
 
-
 ## Binding model Eloquent
 
 Livewire 2 mendukung binding `wire:model` langsung ke properti model Eloquent. Misalnya, berikut adalah pola yang umum:
@@ -172,8 +171,7 @@ protected $rules = [
 ```
 
 ```html
-<input wire:model="post.title">
-<input wire:model="post.description">
+<input wire:model="post.title" /> <input wire:model="post.description" />
 ```
 
 Di Livewire 3, binding langsung ke model Eloquent telah dinonaktifkan sebagai gantinya menggunakan properti individual, atau mengekstrak [Form Objects](/docs/forms#extracting-a-form-object).
@@ -197,27 +195,35 @@ Jika Anda secara manual menyertakan Alpine di aplikasi Livewire Anda, Anda perlu
 Jika Anda menyertakan Alpine ke aplikasi Anda melalui tag skrip seperti berikut, Anda dapat menghapusnya seluruhnya dan Livewire akan memuat versi internalnya sebagai gantinya:
 
 ```html
-<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script> <!-- [tl! remove] -->
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+></script>
+<!-- [tl! remove] -->
 ```
 
 ### Menyertakan plugin melalui tag skrip
 
 Livewire 3 sekarang dikirimkan dengan plugin Alpine berikut out-of-the-box:
 
-* [Anchor](https://alpinejs.dev/plugins/anchor)
-* [Collapse](https://alpinejs.dev/plugins/collapse)
-* [Focus](https://alpinejs.dev/plugins/focus)
-* [Intersect](https://alpinejs.dev/plugins/intersect)
-* [Mask](https://alpinejs.dev/plugins/mask)
-* [Morph](https://alpinejs.dev/plugins/morph)
-* [Persist](https://alpinejs.dev/plugins/persist)
+- [Anchor](https://alpinejs.dev/plugins/anchor)
+- [Collapse](https://alpinejs.dev/plugins/collapse)
+- [Focus](https://alpinejs.dev/plugins/focus)
+- [Intersect](https://alpinejs.dev/plugins/intersect)
+- [Mask](https://alpinejs.dev/plugins/mask)
+- [Morph](https://alpinejs.dev/plugins/morph)
+- [Persist](https://alpinejs.dev/plugins/persist)
 
 Penting untuk memperhatikan perubahan pada file [package.json](https://github.com/livewire/livewire/blob/main/package.json), karena plugin Alpine baru mungkin ditambahkan!
 
 Jika Anda sebelumnya telah menyertakan plugin ini di aplikasi Anda melalui tag `<script>` seperti di bawah ini, Anda harus menghapusnya bersama dengan inti Alpine:
 
 ```html
-<script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script> <!-- [tl! remove:1] -->
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"
+></script>
+<!-- [tl! remove:1] -->
 <!-- ... -->
 ```
 
@@ -227,9 +233,9 @@ Jika Anda saat ini mengakses objek global `Alpine` dari tag skrip seperti ini:
 
 ```html
 <script>
-    document.addEventListener('alpine:init', () => {
-        Alpine.data(...)
-    })
+  document.addEventListener('alpine:init', () => {
+      Alpine.data(...)
+  })
 </script>
 ```
 
@@ -242,12 +248,12 @@ Jika Anda telah menyertakan Alpine atau plugin Alpine inti populer yang disebutk
 ```js
 // Warning: this is a snippet of the Livewire 2 approach to including Alpine
 
-import Alpine from 'alpinejs'
-import intersect from '@alpinejs/intersect'
+import Alpine from "alpinejs";
+import intersect from "@alpinejs/intersect";
 
-Alpine.plugin(intersect)
+Alpine.plugin(intersect);
 
-Alpine.start()
+Alpine.start();
 ```
 
 Anda dapat menghapusnya seluruhnya, karena Livewire menyertakan Alpine dan banyak plugin Alpine populer secara default.
@@ -259,12 +265,12 @@ Jika Anda mendaftarkan plugin Alpine khusus atau komponen di dalam JavaScript bu
 ```js
 // Warning: this is a snippet of the Livewire 2 approach to including Alpine
 
-import Alpine from 'alpinejs'
-import customPlugin from './plugins/custom-plugin'
+import Alpine from "alpinejs";
+import customPlugin from "./plugins/custom-plugin";
 
-Alpine.plugin(customPlugin)
+Alpine.plugin(customPlugin);
 
-Alpine.start()
+Alpine.start();
 ```
 
 Anda masih dapat melakukan ini dengan mengimpor modul ESM inti Livewire ke dalam bundle Anda dan mengakses `Alpine` dari sana.
@@ -282,12 +288,15 @@ Untuk mengimpor Livewire ke dalam bundle Anda, Anda harus terlebih dahulu menona
 Sekarang, Anda dapat mengimpor `Alpine` dan `Livewire` ke dalam bundle aplikasi Anda seperti ini:
 
 ```js
-import { Livewire, Alpine } from '../../vendor/livewire/livewire/dist/livewire.esm';
-import customPlugin from './plugins/custom-plugin'
+import {
+  Livewire,
+  Alpine,
+} from "../../vendor/livewire/livewire/dist/livewire.esm";
+import customPlugin from "./plugins/custom-plugin";
 
-Alpine.plugin(customPlugin)
+Alpine.plugin(customPlugin);
 
-Livewire.start()
+Livewire.start();
 ```
 
 Perhatikan Anda tidak lagi perlu memanggil `Alpine.start()`. Livewire akan memulai Alpine secara otomatis.
@@ -301,14 +310,20 @@ Di Livewire 3, `wire:model` "deferred" secara default (bukan dengan `wire:model.
 Berikut adalah daftar substitusi yang diperlukan yang harus Anda buat dalam template Anda untuk menjaga perilaku aplikasi Anda konsisten:
 
 ```html
-<input wire:model="..."> <!-- [tl! remove] -->
-<input wire:model.live="..."> <!-- [tl! add] -->
+<input wire:model="..." />
+<!-- [tl! remove] -->
+<input wire:model.live="..." />
+<!-- [tl! add] -->
 
-<input wire:model.defer="..."> <!-- [tl! remove] -->
-<input wire:model="..."> <!-- [tl! add] -->
+<input wire:model.defer="..." />
+<!-- [tl! remove] -->
+<input wire:model="..." />
+<!-- [tl! add] -->
 
-<input wire:model.lazy="..."> <!-- [tl! remove] -->
-<input wire:model.blur="..."> <!-- [tl! add] -->
+<input wire:model.lazy="..." />
+<!-- [tl! remove] -->
+<input wire:model.blur="..." />
+<!-- [tl! add] -->
 ```
 
 ## `@entangle`
@@ -329,12 +344,12 @@ Untuk menjaga aplikasi Anda berjalan seperti yang diharapkan, buat substitusi `@
 
 Di Livewire 2, Livewire memiliki dua metode PHP berbeda untuk memicu event:
 
-* `emit()`
-* `dispatchBrowserEvent()`
+- `emit()`
+- `dispatchBrowserEvent()`
 
 Livewire 3 telah menyatukan kedua metode ini menjadi satu metode:
 
-* `dispatch()`
+- `dispatch()`
 
 Berikut adalah contoh dasar pengiriman dan mendengarkan event di Livewire 3:
 
@@ -392,17 +407,27 @@ $this->dispatch('post-created', postId: $post->id); // [tl! add]
 ```
 
 ```html
-<button wire:click="$emit('post-created')">...</button> <!-- [tl! remove] -->
-<button wire:click="$dispatch('post-created')">...</button> <!-- [tl! add] -->
+<button wire:click="$emit('post-created')">...</button>
+<!-- [tl! remove] -->
+<button wire:click="$dispatch('post-created')">...</button>
+<!-- [tl! add] -->
 
-<button wire:click="$emit('post-created', 1)">...</button> <!-- [tl! remove] -->
-<button wire:click="$dispatch('post-created', { postId: 1 })">...</button> <!-- [tl! add] -->
+<button wire:click="$emit('post-created', 1)">...</button>
+<!-- [tl! remove] -->
+<button wire:click="$dispatch('post-created', { postId: 1 })">...</button>
+<!-- [tl! add] -->
 
-<button wire:click="$emitTo('foo', post-created', 1)">...</button> <!-- [tl! remove] -->
-<button wire:click="$dispatchTo('foo', 'post-created', { postId: 1 })">...</button> <!-- [tl! add] -->
+<button wire:click="$emitTo('foo', post-created', 1)">...</button>
+<!-- [tl! remove] -->
+<button wire:click="$dispatchTo('foo', 'post-created', { postId: 1 })">
+  ...
+</button>
+<!-- [tl! add] -->
 
-<button x-on:click="$wire.emit('post-created', 1)">...</button> <!-- [tl! remove] -->
-<button x-on:click="$dispatch('post-created', { postId: 1 })">...</button> <!-- [tl! add] -->
+<button x-on:click="$wire.emit('post-created', 1)">...</button>
+<!-- [tl! remove] -->
+<button x-on:click="$dispatch('post-created', { postId: 1 })">...</button>
+<!-- [tl! add] -->
 ```
 
 ### `emitUp()`
@@ -485,8 +510,10 @@ $this->setPage(2);
 Fitur prefetching Livewire (`wire:click.prefetch`) telah dihapus seluruhnya. Jika Anda bergantung pada fitur ini, aplikasi Anda masih akan berjalan, hanya akan sedikit kurang performa pada instance di mana Anda sebelumnya mendapat manfaat dari `.prefetch`.
 
 ```html
-<button wire:click.prefetch=""> <!-- [tl! remove] -->
-<button wire:click="..."> <!-- [tl! add] -->
+<button wire:click.prefetch="">
+  <!-- [tl! remove] -->
+  <button wire:click="..."><!-- [tl! add] --></button>
+</button>
 ```
 
 ## Perubahan kelas komponen
@@ -563,41 +590,42 @@ Banyak hook lifecycle JavaScript internal Livewire telah berubah di Livewire 3.
 Berikut adalah perbandingan hook lama dan sintaks baru mereka untuk Anda find/replace di aplikasi Anda:
 
 ```js
-Livewire.hook('component.initialized', (component) => {}) // [tl! remove]
-Livewire.hook('component.init', ({ component, cleanup }) => {}) // [tl! add]
+Livewire.hook("component.initialized", (component) => {}); // [tl! remove]
+Livewire.hook("component.init", ({ component, cleanup }) => {}); // [tl! add]
 
-Livewire.hook('element.initialized', (el, component) => {}) // [tl! remove]
-Livewire.hook('element.init', ({ el, component }) => {}) // [tl! add]
+Livewire.hook("element.initialized", (el, component) => {}); // [tl! remove]
+Livewire.hook("element.init", ({ el, component }) => {}); // [tl! add]
 
-Livewire.hook('element.updating', (fromEl, toEl, component) => {}) // [tl! remove]
-Livewire.hook('morph.updating', ({ el, toEl, component }) => {}) // [tl! add]
+Livewire.hook("element.updating", (fromEl, toEl, component) => {}); // [tl! remove]
+Livewire.hook("morph.updating", ({ el, toEl, component }) => {}); // [tl! add]
 
-Livewire.hook('element.updated', (el, component) => {}) // [tl! remove]
-Livewire.hook('morph.updated', ({ el, component }) => {}) // [tl! add]
+Livewire.hook("element.updated", (el, component) => {}); // [tl! remove]
+Livewire.hook("morph.updated", ({ el, component }) => {}); // [tl! add]
 
-Livewire.hook('element.removed', (el, component) => {}) // [tl! remove]
-Livewire.hook('morph.removed', ({ el, component }) => {}) // [tl! add]
+Livewire.hook("element.removed", (el, component) => {}); // [tl! remove]
+Livewire.hook("morph.removed", ({ el, component }) => {}); // [tl! add]
 
-Livewire.hook('message.sent', (message, component) => {}) // [tl! remove]
-Livewire.hook('message.failed', (message, component) => {}) // [tl! remove]
-Livewire.hook('message.received', (message, component) => {}) // [tl! remove]
-Livewire.hook('message.processed', (message, component) => {}) // [tl! remove]
+Livewire.hook("message.sent", (message, component) => {}); // [tl! remove]
+Livewire.hook("message.failed", (message, component) => {}); // [tl! remove]
+Livewire.hook("message.received", (message, component) => {}); // [tl! remove]
+Livewire.hook("message.processed", (message, component) => {}); // [tl! remove]
 
-Livewire.hook('commit', ({ component, commit, respond, succeed, fail }) => { // [tl! add:14]
-    // Equivalent of 'message.sent'
+Livewire.hook("commit", ({ component, commit, respond, succeed, fail }) => {
+  // [tl! add:14]
+  // Equivalent of 'message.sent'
 
-    succeed(({ snapshot, effects }) => {
-        // Equivalent of 'message.received'
+  succeed(({ snapshot, effects }) => {
+    // Equivalent of 'message.received'
 
-        queueMicrotask(() => {
-            // Equivalent of 'message.processed'
-        })
-    })
+    queueMicrotask(() => {
+      // Equivalent of 'message.processed'
+    });
+  });
 
-    fail(() => {
-        // Equivalent of 'message.failed'
-    })
-})
+  fail(() => {
+    // Equivalent of 'message.failed'
+  });
+});
 ```
 
 Anda dapat berkonsultasi dengan dokumentasi [hook JavaScript baru](/docs/javascript) untuk pemahaman yang lebih menyeluruh tentang sistem hook baru.

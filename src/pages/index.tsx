@@ -4,87 +4,83 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 
 import styles from "./index.module.css";
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import ShikiCodeBlock from '../components/ShikiCodeBlock';
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import ShikiCodeBlock from "../components/ShikiCodeBlock";
 
 function HeroSection() {
   return (
     <div className={styles.heroContainer}>
+      {/* Decorative animated lines */}
+      <div className={styles.decorativeLines}>
+        <div className={styles.line}></div>
+        <div className={styles.line}></div>
+        <div className={styles.line}></div>
+        <div className={styles.line}></div>
+        <div className={styles.line}></div>
+      </div>
+
       <div className={styles.heroContent}>
         {/* Hero Headline */}
         <div className={styles.heroText}>
-          <h1 className={`${styles.heroHeadline} ${styles.customHeadline}`}>
-            Bangun aplikasi single-page,{" "}
-            <strong>tanpa membangun API.</strong>
+          <h1 className={styles.heroHeadline}>
+            Cara paling produktif untuk membangun aplikasi web Anda
           </h1>
           <p className={styles.heroSubheadline}>
-            Buat <strong>aplikasi single-page modern React, Vue, dan Svelte</strong> menggunakan routing server-side klasik. Berfungsi dengan backend apa pun — dioptimalkan untuk Laravel.
+            UI front-end yang dinamis dan powerful tanpa meninggalkan PHP
           </p>
         </div>
 
         {/* Code Example */}
         <div className={styles.codeExample}>
-          <Tabs groupId="code-example" defaultValue="controller" values={[
-            { label: 'UserController.php', value: 'controller' },
-            { label: 'Users.vue', value: 'vue' },
-          ]}>
-            <TabItem value="controller">
-              <ShikiCodeBlock
-                code={`class UsersController extends Controller
+          <ShikiCodeBlock
+            code={`<input type="text" wire:model="search">
+
+// Search will automatically update...
+class SearchComponent extends Component
 {
-    public function index()
+    public $search = '';
+
+    public function render()
     {
-        return Livewire::render('Users/Index', [
-            'users' => User::all(),
+        return view('livewire.search', [
+            'results' => User::where('name', 'like', '%'.$this->search.'%')->get(),
         ]);
     }
 }`}
-                language="php"
-              />
-            </TabItem>
-            <TabItem value="vue">
-              <ShikiCodeBlock
-                code={`<script setup>
-import Layout from './Layout'
-import { Link, Head } from '@livewire/vue3'
-
-defineProps({ users: Array })
-</script>
-
-<template>
-  <Layout>
-    <Head title="Users" />
-    <div v-for="user in users" :key="user.id">
-      <Link :href="/users/\${user.id}">
-        {{ user.name }}
-      </Link>
-      <div>{{ user.email }}</div>
-    </div>
-  </Layout>
-</template>`}
-                language="vue"
-              />
-            </TabItem>
-          </Tabs>
+            language="php"
+          />
         </div>
 
-        {/* CTA Buttons */}
+        {/* CTA Button */}
         <div className={styles.heroActions}>
-          <Link to="/docs/intro" className={styles.primaryButton}>
-            Mulai Sekarang
+          <Link
+            to="/docs/getting-started/quickstart"
+            className={styles.primaryButton}
+          >
+            Getting Started
           </Link>
         </div>
 
         {/* Translation Info Card */}
         <div className={styles.infoCard}>
-          <div className={styles.infoCardIcon}>
-            📚
-          </div>
+          <div className={styles.infoCardIcon}>📚</div>
           <div className={styles.infoCardContent}>
-            <h3 className={styles.infoCardTitle}>Dokumentasi Bahasa Indonesia</h3>
+            <h3 className={styles.infoCardTitle}>
+              Dokumentasi Bahasa Indonesia
+            </h3>
             <p className={styles.infoCardDescription}>
-              Website ini merupakan dokumentasi terjemahan dari <a href="https://livewire.laravel.com" target="_blank" rel="noopener noreferrer" className={styles.infoCardLink}>livewire.laravel.com</a> yang disertai dengan penambahan penjelasan dan recipes praktis yang sering digunakan dalam proyek Livewire.
+              Website ini merupakan dokumentasi terjemahan dari{" "}
+              <a
+                href="https://livewire.laravel.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.infoCardLink}
+              >
+                livewire.laravel.com
+              </a>{" "}
+              yang disertai dengan penambahan penjelasan dan recipes praktis
+              yang sering digunakan dalam proyek Livewire.
             </p>
           </div>
         </div>

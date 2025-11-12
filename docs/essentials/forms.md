@@ -4,13 +4,13 @@ sidebar_position: 7
 
 # Forms
 
-Karena form adalah tulang punggung sebagian besar aplikasi web, Livewire menyediakan banyak utilitas berguna untuk membangunnya. Dari menangani elemen input sederhana hingga hal-hal kompleks seperti validasi real-time atau pengunggahan file, Livewire memiliki alat-alat yang sederhana dan terdokumentasi dengan baik untuk mempermudah hidup Anda dan menyenangkan pengguna Anda.
+Karena *form* adalah *tulang punggung* sebagian besar aplikasi *web*, Livewire menyediakan banyak utilitas berguna untuk membangunnya. Dari menangani *elemen input* sederhana hingga hal-hal kompleks seperti *validasi real-time* atau pengunggahan *file*, Livewire memiliki alat-alat yang sederhana dan terdokumentasi dengan baik untuk mempermudah hidup Anda dan menyenangkan *user* Anda.
 
 Mari kita mulai.
 
 ## Mengirimkan form
 
-Mari kita mulai dengan melihat form yang sangat sederhana dalam komponen `CreatePost`. Form ini akan memiliki dua input teks sederhana dan tombol submit, serta beberapa kode di backend untuk mengelola state dan pengiriman form:
+Mari kita mulai dengan melihat *form* yang sangat sederhana dalam *component* `CreatePost`. *Form* ini akan memiliki dua *input teks* sederhana dan *tombol submit*, serta beberapa kode di *backend* untuk mengelola *state* dan pengiriman *form*:
 
 ```php
 <?php
@@ -54,19 +54,19 @@ class CreatePost extends Component
 </form>
 ```
 
-Seperti yang Anda lihat, kita "mengikat" public properties `$title` dan `$content` dalam form di atas menggunakan `wire:model`. Ini adalah salah satu fitur Livewire yang paling umum digunakan dan kuat.
+Seperti yang Anda lihat, kita *"mengikat"* *public properties* `$title` dan `$content` dalam *form* di atas menggunakan `wire:model`. Ini adalah salah satu fitur Livewire yang paling umum digunakan dan *powerful*.
 
-Selain mengikat `$title` dan `$content`, kita menggunakan `wire:submit` untuk menangkap event `submit` ketika tombol "Save" diklik dan memanggil aksi `save()`. Aksi ini akan mempertahankan input form ke database.
+Selain mengikat `$title` dan `$content`, kita menggunakan `wire:submit` untuk menangkap *event* `submit` ketika *tombol* "Save" diklik dan memanggil *action* `save()`. *Action* ini akan mempertahankan *input form* ke *database*.
 
-Setelah post baru dibuat di database, kita mengarahkan user ke halaman komponen `ShowPosts` dan menunjukkan kepada mereka pesan "flash" bahwa post baru telah dibuat.
+Setelah *post* baru dibuat di *database*, kita mengarahkan *user* ke halaman *component* `ShowPosts` dan menunjukkan kepada mereka *pesan flash* bahwa *post* baru telah dibuat.
 
 ### Menambahkan validasi
 
-Untuk menghindari menyimpan input user yang tidak lengkap atau berbahaya, sebagian besar form memerlukan beberapa jenis validasi input.
+Untuk menghindari menyimpan *input user* yang tidak lengkap atau berbahaya, sebagian besar *form* memerlukan beberapa jenis *validasi input*.
 
-Livewire membuat validasi form Anda sesederhana menambahkan atribut `#[Validate]` di atas properties yang ingin Anda validasi.
+Livewire membuat *validasi form* Anda sesederhana menambahkan *attribute* `#[Validate]` di atas *properties* yang ingin Anda validasi.
 
-Setelah sebuah property memiliki atribut `#[Validate]` yang terpasang, aturan validasi akan diterapkan ke nilai property kapan pun diperbarui di sisi server.
+Setelah sebuah *property* memiliki *attribute* `#[Validate]` yang terpasang, aturan validasi akan diterapkan ke nilai *property* kapan pun diperbarui di sisi *server*.
 
 Mari kita tambahkan beberapa aturan validasi dasar ke properties `$title` dan `$content` dalam komponen `CreatePost` kita:
 
@@ -105,7 +105,7 @@ class CreatePost extends Component
 }
 ```
 
-Kita juga akan memodifikasi template Blade kita untuk menampilkan kesalahan validasi apa pun di halaman.
+Kita juga akan memodifikasi *template Blade* kita untuk menampilkan *error validasi* apa pun di halaman.
 
 ```blade
 <form wire:submit="save">
@@ -123,25 +123,25 @@ Kita juga akan memodifikasi template Blade kita untuk menampilkan kesalahan vali
 </form>
 ```
 
-Sekarang, jika user mencoba mengirimkan form tanpa mengisi field mana pun, mereka akan melihat pesan validasi yang memberi tahu mereka field mana yang wajib diisi sebelum menyimpan post.
+Sekarang, jika *user* mencoba mengirimkan *form* tanpa mengisi *field* mana pun, mereka akan melihat *pesan validasi* yang memberi tahu mereka *field* mana yang *wajib diisi* sebelum menyimpan *post*.
 
 Livewire memiliki lebih banyak fitur validasi untuk ditawarkan. Untuk informasi lebih lanjut, kunjungi [halaman dokumentasi khusus kami tentang Validasi](/docs/validation).
 
 ### Mengekstrak objek form
 
-Jika Anda bekerja dengan form yang besar dan lebih suka mengekstrak semua properties, logika validasi, dll., ke dalam kelas terpisah, Livewire menawarkan form objects.
+Jika Anda bekerja dengan *form* yang besar dan lebih suka mengekstrak semua *properties*, *logika validasi*, dll., ke dalam *kelas* terpisah, Livewire menawarkan *form objects*.
 
-Form objects memungkinkan Anda untuk menggunakan kembali logika form di seluruh komponen dan menyediakan cara yang bagus untuk menjaga kelas komponen Anda lebih bersih dengan mengelompokkan semua kode terkait form ke dalam kelas terpisah.
+*Form objects* memungkinkan Anda untuk menggunakan kembali *logika form* di seluruh *component* dan menyediakan cara yang bagus untuk menjaga *kelas component* Anda lebih bersih dengan mengelompokkan semua kode terkait *form* ke dalam *kelas* terpisah.
 
-Anda dapat membuat kelas form secara manual atau menggunakan perintah artisan yang mudah:
+Anda dapat membuat *kelas form* secara manual atau menggunakan *perintah artisan* yang mudah:
 
 ```shell
 php artisan livewire:form PostForm
 ```
 
-Perintah di atas akan membuat file bernama `app/Livewire/Forms/PostForm.php`.
+*Perintah* di atas akan membuat file bernama `app/Livewire/Forms/PostForm.php`.
 
-Mari kita tulis ulang komponen `CreatePost` untuk menggunakan kelas `PostForm`:
+Mari kita tulis ulang *component* `CreatePost` untuk menggunakan *kelas* `PostForm`:
 
 ```php
 <?php
@@ -208,7 +208,7 @@ class CreatePost extends Component
 </form>
 ```
 
-Jika Anda mau, Anda juga dapat mengekstrak logika pembuatan post ke dalam objek form seperti ini:
+Jika Anda mau, Anda juga dapat mengekstrak *logika pembuatan post* ke dalam *form object* seperti ini:
 
 ```php
 <?php
@@ -338,7 +338,7 @@ class PostForm extends Form
 
 Seperti yang Anda lihat, kita telah menambahkan metode `setPost()` ke objek `PostForm` untuk secara opsional memungkinkan pengisian form dengan data yang ada serta menyimpan post pada objek form untuk digunakan nanti. Kami juga telah menambahkan metode `update()` untuk memperbarui post yang ada.
 
-Form objects tidak diperlukan saat bekerja dengan Livewire, tetapi mereka menawarkan abstraksi yang bagus untuk menjaga komponen Anda bebas dari boilerplate yang berulang.
+*Form objects* tidak diperlukan saat bekerja dengan Livewire, tetapi mereka menawarkan *abstraksi* yang bagus untuk menjaga *component* Anda bebas dari *boilerplate* yang berulang.
 
 ### Me-reset field form
 
@@ -524,9 +524,9 @@ Sekarang jika property `$title` diperbarui sebelum form dikirim—seperti saat m
 
 ### Menunjukkan indikator loading
 
-Secara default, Livewire akan secara otomatis menonaktifkan tombol submit dan menandai input sebagai `readonly` saat form sedang dikirim, mencegah user mengirimkan form lagi saat pengiriman pertama sedang ditangani.
+Secara default, Livewire akan secara otomatis menonaktifkan *tombol submit* dan menandai *input* sebagai `readonly` saat *form* sedang dikirim, mencegah *user* mengirimkan *form* lagi saat pengiriman pertama sedang ditangani.
 
-Namun, bisa jadi sulit bagi user untuk mendeteksi state "loading" ini tanpa tambahan di UI aplikasi Anda.
+Namun, bisa jadi sulit bagi *user* untuk mendeteksi *state* "*loading*" ini tanpa tambahan di *UI* aplikasi Anda.
 
 Berikut adalah contoh menambahkan spinner loading kecil ke tombol "Save" melalui `wire:loading` sehingga user memahami bahwa form sedang dikirim:
 
@@ -546,9 +546,9 @@ Fitur `wire:loading` Livewire memiliki lebih banyak lagi untuk ditawarkan. Kunju
 
 ## Field yang diperbarui secara real-time
 
-Secara default, Livewire hanya mengirim permintaan jaringan ketika form dikirim (atau [aksi](/docs/actions) lainnya dipanggil), bukan saat form sedang diisi.
+Secara default, Livewire hanya mengirim *permintaan jaringan* ketika *form* dikirim (atau [action](/docs/actions) lainnya dipanggil), bukan saat *form* sedang diisi.
 
-Ambil komponen `CreatePost` sebagai contoh. Jika Anda ingin memastikan field input "title" disinkronkan dengan property `$title` di backend saat user mengetik, Anda dapat menambahkan modifier `.live` ke `wire:model` seperti ini:
+Ambil *component* `CreatePost` sebagai contoh. Jika Anda ingin memastikan *field input* "title" disinkronkan dengan *property* `$title` di *backend* saat *user* mengetik, Anda dapat menambahkan *modifier* `.live` ke `wire:model` seperti ini:
 
 ```blade
 <input type="text" wire:model.live="title">

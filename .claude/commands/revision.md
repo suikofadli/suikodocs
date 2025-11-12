@@ -1,4 +1,8 @@
-Review terjemahan $1 dari $2 , berikan hasil yg terbaik dan perbaiki kata-kata yang sebaiknya tetap dijaga istilahnya dan juga formatting menjadi kata yang seharusnya miring, tebal, dan lainnya.
+Review these translations file in context of Livewire documentation in Bahasa Indonesia, give best revision if any related to
+- What terms should be stay in original data
+- Text formatting which word should be italic, bold, etc.
 
-- Biarkan file asset jangan diubah.
+$ARGUMENTS
+
+REMBEMBER: Just ignore static asset location written in the markdown.
 

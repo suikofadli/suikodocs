@@ -1,6 +1,9 @@
 I want to make a best translation of Laravel Livewire to Bahasa Indonesia.
 
-Original file $1, destination file $2.
+Here is the list of files and its destination files:
+
+$ARGUMENTS
+
 
 Rules:
 
